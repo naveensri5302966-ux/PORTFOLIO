@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Naveen Sri T — 3D Cyber Portfolio. Ethical hacker, SOC analyst, and cybersecurity engineering student at Sri Shakthi Institute of Engineering and Technology." />
+  <meta name="keywords" content="Naveen Sri T, Ethical Hacker, Cybersecurity, 3D Portfolio, WebGL, Incident Response, SCRIMP, Coimbatore" />
+  <meta name="theme-color" content="#080a0c" />
+  <title>Naveen Sri T — 3D Cyber-Terminal Portfolio</title>
+  
+  <!-- Modern Typography from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Three.js 3D WebGL Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Core Cyber Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- 3D WebGL Global Canvas Background (Dynamic Grid Waves + Constellation) -->
+  <div id="webgl-bg-container">
+    <canvas id="webgl-bg"></canvas>
+  </div>
+
+  <!-- Ambient CRT Scanline & Depth Overlays -->
+  <div class="cyber-overlay"></div>
+  <div class="vignette"></div>
+
+  <!-- Custom 3D Target Reticle Follower -->
+  <div id="custom-cursor">
+    <div class="cursor-reticle">
+      <div class="cursor-dot"></div>
+    </div>
+    <div id="cursor-coords" class="cursor-coords">X:0 Y:0</div>
+  </div>
+
+  <!-- Main Application Shell -->
+  <div class="shell">
+
+    <!-- Fixed High-Tech Cyber Rail -->
+    <aside class="rail">
+      <a class="mark" href="#home" aria-label="Naveen Sri Home">
+        <span class="logo"><span>N</span></span>
+        <span>NST <b>//</b></span>
+      </a>
+      <div class="rule"></div>
+      <div class="rail-index">
+        <a href="#about" title="01 / About Identity">01</a>
+        <a href="#skills" title="02 / Capabilities">02</a>
+        <a href="#projects" title="03 / Selected Project">03</a>
+        <a href="#education" title="04 / Education & Certs">04</a>
+        <a href="#contact" title="05 / Open Channel">05</a>
+      </div>
+      <p class="vertical-label">CYBER DEFENSE · 3D SURFACE ONLINE</p>
+      <div class="rail-tools">
+        <!-- Interactive Terminal HUD Launcher -->
+        <button class="rail-btn open-terminal-btn" title="Open Cyber CLI Terminal (Press `)" aria-label="Open Terminal">
+          &gt;_
+        </button>
+        <!-- Procedural Web Audio Synth Toggle -->
+        <button id="audio-toggle" class="rail-btn" title="Toggle Procedural Audio FX" aria-label="Toggle Audio">
+          🔇
+        </button>
+      </div>
+      <div class="rail-bottom">
+        <span class="dot"></span>NODE_LIVE
+      </div>
+    </aside>
+
+    <!-- Top Telemetry & Navigation Header -->
+    <header class="top">
+      <div class="top-telemetry">
+        <span>GRID: <strong>WebGL 3D</strong></span>
+        <span>SYS_STATUS: <strong>NOMINAL</strong></span>
+        <span>LOC: <strong>COIMBATORE, IN</strong></span>
+        <span>TARGET: <strong id="hud-coords">0,0</strong></span>
+      </div>
+
+      <a class="mobile-brand" href="#home">
+        <span class="logo"><span>N</span></span>
+        NST <b>//</b>
+      </a>
+
+      <button class="menu" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav>
+        <a href="#about"><small>01</small>About</a>
+        <a href="#skills"><small>02</small>Capabilities</a>
+        <a href="#projects"><small>03</small>Project</a>
+        <a href="#education"><small>04</small>Education</a>
+        <a href="#contact"><small>05</small>Contact</a>
+        <button class="nav-terminal-btn open-terminal-btn">
+          <span>&gt;_</span> CLI
+        </button>
+        <a class="nav-contact" href="mailto:naveensri5302966@gmail.com">Open channel ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===================================================================
+           HERO SECTION: 3D HOLOGRAPHIC CYBER CORE & INTRO
+           =================================================================== -->
+      <section id="home" class="section hero perspective-scene">
+        
+        <!-- Left Hero Copy with 3D Spatial Stagger -->
+        <div class="hero-copy reveal">
+          <p class="eyebrow">
+            <span class="dot"></span>
+            AVAILABLE FOR LEARNING &amp; COLLABORATION
+          </p>
+          <p class="kicker">01 / PROFILE_INIT // 3D_ACTIVE</p>
+          <h1>
+            Naveen<br />
+            <em>Sri T</em><i>.</i>
+          </h1>
+          <p class="role">
+            Ethical Hacker <span>·</span> Cybersecurity Engineering Student
+          </p>
+          <p class="intro">
+            I study the signal before I touch the system. Building practical fluency across ethical hacking, networking, Linux, and secure software engineering.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="#projects">Review the work ↘</a>
+            <a class="btn ghost" href="#contact">Open a channel ›</a>
+          </div>
+
+          <div class="social">
+            <a href="https://www.linkedin.com/in/naveen-sri-23448741b" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://www.instagram.com/_naveen_sri.07" target="_blank" rel="noreferrer">Instagram ↗</a>
+            <span class="location">Coimbatore, IN ↗</span>
+          </div>
+        </div>
+
+        <!-- Right 3D Interactive Cyber Core Hologram Panel -->
+        <div class="hero-3d-panel tilt-card-3d reveal">
+          <div class="panel-header layer-high">
+            <span>LIVE_SURFACE // 3D_CORE</span>
+            <span class="signal-tag"><i class="dot"></i> MONITORING</span>
+          </div>
+
+          <!-- Mode Selectors for 3D Geometry Physics -->
+          <div class="orb-modes layer-mid">
+            <button class="mode-btn active" data-mode="shield">DEFENSE SHIELD</button>
+            <button class="mode-btn" data-mode="scan">THREAT SCAN</button>
+            <button class="mode-btn" data-mode="overclock">OVERCLOCK</button>
+          </div>
+
+          <!-- 3D WebGL Canvas for Rotating Cyber Core -->
+          <div class="cyber-orb-wrapper layer-pop">
+            <canvas id="hero-3d-canvas"></canvas>
+            <span class="orb-hint">DRAG TO ROTATE 3D CORE</span>
+          </div>
+
+          <!-- Telemetry Specs -->
+          <div class="panel-specs layer-mid">
+            <div>
+              <span>Core Focus</span>
+              <strong>ETHICAL<br /><span>HACKING</span></strong>
+            </div>
+            <div>
+              <span>Specialization</span>
+              <strong>SOC<br /><span>ANALYSIS</span></strong>
+            </div>
+          </div>
+
+          <div class="panel-footer layer-bg">
+            <span>DEFENSE NODE 0x07</span>
+            <span>SECURE · LEARN · BUILD</span>
+          </div>
+        </div>
+
+        <a class="scroll-indicator" href="#about">Scroll to inspect ↘</a>
+      </section>
+
+      <!-- ===================================================================
+           ABOUT SECTION: IDENTITY LOG & SPATIAL DATA CARDS
+           =================================================================== -->
+      <section id="about" class="section dark-section perspective-scene">
+        <div class="section-head">
+          <div class="section-label">
+            <span>01</span><i></i>About the operator
+          </div>
+          <span class="section-count">/ 05</span>
+        </div>
+
+        <div class="grid-two">
+          <div class="title reveal">
+            <p class="kicker">// IDENTITY.LOG</p>
+            <h2>Curiosity,<br /><span>with intent.</span></h2>
+          </div>
+
+          <div class="copy reveal">
+            <p class="lead">
+              I’m a Cyber Security Engineering student passionate about defensive architecture, ethical exploitation, programming, and emerging technologies.
+            </p>
+            <p>
+              I trace the fundamentals first: how a network moves packets, where a system exposes attack surfaces, and what digital evidence remains after an incident. My current practice spans ethical hacking, networking protocols, Linux internals, and software development—building the disciplined habits required for a high-impact SOC and security engineering role.
+            </p>
+            <div class="objective">
+              <span>OPERATING INTENT / CAREER OBJECTIVE</span>
+              <p>
+                Build deep technical depth, gain hands-on operational exposure, and contribute to robust, resilient security solutions while continuously learning the systems behind the signal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Spatial Identity Matrix Cards -->
+        <div class="identity-cards tilt-card-3d reveal">
+          <div class="identity-card layer-mid">
+            <span>RECORD / STATUS</span>
+            <strong>2nd Year · B.E. Cyber Security</strong>
+          </div>
+          <div class="identity-card layer-high">
+            <span>RECORD / INSTITUTION</span>
+            <strong>Sri Shakthi Institute of Engineering &amp; Technology</strong>
+          </div>
+          <div class="identity-card layer-mid">
+            <span>RECORD / LANGUAGES</span>
+            <strong>Tamil · English</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SKILLS SECTION: 3D HOLOGRAPHIC RADAR & METRICS
+           =================================================================== -->
+      <section id="skills" class="section perspective-scene">
+        <div class="section-head">
+          <div class="section-label">
+            <span>02</span><i></i>Capabilities &amp; Toolkit
+          </div>
+          <span class="section-count">/ 05</span>
+        </div>
+
+        <div class="skills-layout">
+          <div class="skill-intro reveal">
+            <p class="kicker">// PROFICIENCY_MATRIX</p>
+            <h2>Tools for<br /><span>the signal.</span></h2>
+            <p>
+              An honest evaluation of the current toolkit. Each capability is an active working surface—measured, practiced, and continuously in motion.
+            </p>
+
+            <!-- Interactive 3D Holographic Skill Radar Widget -->
+            <div class="skill-radar-box tilt-card-3d">
+              <div class="radar-header layer-high">
+                <span>HOLOGRAPHIC RADAR // REAL-TIME</span>
+                <span>SCAN: ACTIVE</span>
+              </div>
+              <div class="radar-canvas-wrap layer-pop">
+                <canvas id="skill-radar-canvas"></canvas>
+              </div>
+            </div>
+
+            <div class="legend">
+              <span><i></i> Practiced</span>
+              <span><i class="line"></i> Developing</span>
+            </div>
+          </div>
+
+          <!-- Detailed Capability Meters -->
+          <div class="skills-list reveal">
+            <div class="skill-row tilt-card-3d">
+              <div class="skill-name layer-mid">
+                <strong>Networking</strong>
+                <small>Infrastructure &amp; Protocols</small>
+              </div>
+              <div class="meter layer-high">
+                <div class="track">
+                  <div class="fill" style="--level:68%"></div>
+                </div>
+                <small>Intermediate</small>
+              </div>
+              <b class="val layer-pop">68%</b>
+            </div>
+
+            <div class="skill-row tilt-card-3d">
+              <div class="skill-name layer-mid">
+                <strong>Cybersecurity Fundamentals</strong>
+                <small>Defensive &amp; Offensive Security Core</small>
+              </div>
+              <div class="meter layer-high">
+                <div class="track">
+                  <div class="fill" style="--level:66%"></div>
+                </div>
+                <small>Intermediate</small>
+              </div>
+              <b class="val layer-pop">66%</b>
+            </div>
+
+            <div class="skill-row tilt-card-3d">
+              <div class="skill-name layer-mid">
+                <strong>HTML / CSS / JavaScript</strong>
+                <small>Interactive Web &amp; 3D Surfaces</small>
+              </div>
+              <div class="meter layer-high">
+                <div class="track">
+                  <div class="fill" style="--level:64%"></div>
+                </div>
+                <small>Intermediate</small>
+              </div>
+              <b class="val layer-pop">64%</b>
+            </div>
+
+            <div class="skill-row tilt-card-3d">
+              <div class="skill-name layer-mid">
+                <strong>Linux Internal &amp; Shell</strong>
+                <small>Operating Systems &amp; Scripting</small>
+              </div>
+              <div class="meter layer-high">
+                <div class="track">
+                  <div class="fill" style="--level:42%"></div>
+                </div>
+                <small>Beginner</small>
+              </div>
+              <b class="val layer-pop">42%</b>
+            </div>
+
+            <div class="skill-row tilt-card-3d">
+              <div class="skill-name layer-mid">
+                <strong>Python</strong>
+                <small>Automation &amp; Security Tools</small>
+              </div>
+              <div class="meter layer-high">
+                <div class="track">
+                  <div class="fill" style="--level:39%"></div>
+                </div>
+                <small>Beginner</small>
+              </div>
+              <b class="val layer-pop">39%</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="working reveal">
+          <span>Working Style</span>
+          <strong>Communication</strong>
+          <strong>Problem Solving</strong>
+          <strong>Team Collaboration</strong>
+          <strong>Threat Modeling</strong>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           PROJECT SECTION: SCRIMP & 3D INCIDENT TOPOLOGY
+           =================================================================== -->
+      <section id="projects" class="section dark-section perspective-scene">
+        <div class="section-head">
+          <div class="section-label">
+            <span>03</span><i></i>Selected Project Showcase
+          </div>
+          <span class="section-count">/ 05</span>
+        </div>
+
+        <div class="case-card tilt-card-3d reveal">
+          
+          <!-- 3D Interactive Incident Topology Viewport -->
+          <div class="case-interactive-3d layer-mid">
+            <canvas id="scrimp-3d-canvas"></canvas>
+            <div class="case-3d-overlay layer-high">
+              <div class="art-label">
+                <span class="dot"></span>
+                <span>CASE_FILE / SCRIMP // 3D TOPOLOGY</span>
+              </div>
+              <div class="scrimp-telemetry" id="scrimp-status-text">
+                HOVER NODES TO INSPECT TOPOLOGY
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Metadata & Intel -->
+          <div class="case-info layer-high">
+            <p class="kicker">01 — CASE FILE / CYBER INCIDENT RESPONSE</p>
+            <h2>SCRIMP<span>.</span></h2>
+            <p class="case-name">
+              Smart Cyber Incident Response and Recovery Portal
+            </p>
+            <p class="case-desc">
+              A comprehensive defensive portal that assists organizations and users in identifying active cyber intrusions, walking through structured mitigation protocols, preserving cryptographic digital evidence, and escalating reports to cybersecurity authorities.
+            </p>
+
+            <div class="facts">
+              <div>
+                <span>FUNCTION PIPELINE</span>
+                <strong>Identify → Mitigate</strong>
+              </div>
+              <div>
+                <span>EVIDENCE PROTOCOL</span>
+                <strong>Preserve → Transmit</strong>
+              </div>
+            </div>
+
+            <div class="tech-stack">
+              <span>DEFENSIVE SECURITY</span>
+              <span>INCIDENT RECOVERY</span>
+              <span>DIGITAL EVIDENCE</span>
+              <span>WEBGL TOPOLOGY</span>
+            </div>
+
+            <div class="case-foot">
+              <span class="status-badge">
+                <i class="dot"></i> Concept / In Active Development
+              </span>
+              <a class="text-link" href="mailto:naveensri5302966@gmail.com?subject=SCRIMP%20Project%20Inquiry">
+                Discuss the project ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           EDUCATION & CREDENTIALS SECTION
+           =================================================================== -->
+      <section id="education" class="section perspective-scene">
+        <div class="section-head">
+          <div class="section-label">
+            <span>04</span><i></i>Education &amp; Credentials
+          </div>
+          <span class="section-count">/ 05</span>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card tilt-card-3d reveal">
+            <div class="edu-icon layer-high">⌁</div>
+            <div class="layer-mid">
+              <p class="kicker">2025 — 2029</p>
+              <h3>B.E. Cyber Security</h3>
+              <p>Sri Shakthi Institute of Engineering and Technology</p>
+            </div>
+            <strong class="score layer-pop">8.0 <small>/ 80%</small></strong>
+          </div>
+
+          <div class="cert-card tilt-card-3d reveal">
+            <div class="layer-mid">
+              <p class="kicker">CERTIFICATION RECORD / VERIFIED</p>
+              <h3>Programming Foundations</h3>
+              <p>Python · C · C++ · Java</p>
+            </div>
+            <div class="cert-meta layer-high">
+              <span>IMF Computers</span>
+              <span>2025–26</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           CONTACT SECTION: SECURE CHANNELS
+           =================================================================== -->
+      <section id="contact" class="section dark-section contact-section perspective-scene">
+        <div class="section-head">
+          <div class="section-label">
+            <span>05</span><i></i>Open Secure Channel
+          </div>
+          <span class="section-count">/ 05</span>
+        </div>
+
+        <div class="contact-grid">
+          <div class="reveal">
+            <div class="kicker">// COMM_UPLINK</div>
+            <h2>Let’s make<br /><span>the next move.</span></h2>
+            <p class="contact-copy">
+              For conversations regarding cybersecurity research, internships, learning opportunities, or practical collaborative projects, reach out through verified channels.
+            </p>
+          </div>
+
+          <div class="contact-card tilt-card-3d reveal">
+            <div class="layer-mid">
+              <p class="kicker">DIRECT CONTACT / ENCRYPTED INBOX</p>
+              <a class="email-link" href="mailto:naveensri5302966@gmail.com">
+                naveensri5302966@gmail.com
+              </a>
+              <button class="copy-btn" id="copy">
+                <span>Copy Email</span>
+                <span>›</span>
+              </button>
+            </div>
+
+            <div class="contact-details layer-high">
+              <a href="tel:8248751761">📞 +91 82487 51761</a>
+              <a href="https://www.linkedin.com/in/naveen-sri-23448741b" target="_blank" rel="noreferrer">
+                🌐 LinkedIn Profile ↗
+              </a>
+              <a href="https://www.instagram.com/_naveen_sri.07" target="_blank" rel="noreferrer">
+                📸 Instagram Profile ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-brand">
+        <span class="logo"><span>N</span></span>
+        NST <b>//</b>
+      </div>
+      <span>© <span id="year">2026</span> NAVEEN SRI T · CYBERSECURITY ENGINEERING</span>
+      <span>3D WEBGL SURFACE · ALL SYSTEMS SECURED</span>
+    </footer>
+  </div>
+
+  <!-- ===================================================================
+       INTERACTIVE CYBER CLI TERMINAL MODAL
+       =================================================================== -->
+  <div id="terminal-modal" class="terminal-modal" role="dialog" aria-label="Cyber Terminal">
+    <div class="terminal-window">
+      <div class="terminal-topbar">
+        <div class="term-controls">
+          <span class="term-dot close" id="close-term" title="Close Terminal"></span>
+          <span class="term-dot min"></span>
+          <span class="term-dot max"></span>
+        </div>
+        <span>CYBER_TERMINAL_V2.4 [root@nst-cyber]</span>
+        <span>PRESS ESC OR ` TO EXIT</span>
+      </div>
+
+      <div class="terminal-body" id="terminal-output">
+        <div class="term-output dim">
+============================================================
+  NAVEEN SRI T — CYBER INTELLIGENCE TERMINAL (3D SHELL)
+============================================================
+Type '<span class="lime">help</span>' for a list of available cybersecurity commands.
+Type '<span class="lime">core overclock</span>' or '<span class="lime">scan</span>' to trigger 3D visual diagnostics.
+        </div>
+      </div>
+
+      <div class="term-input-row">
+        <span class="term-prompt">nst@sec-ops:~$</span>
+        <input type="text" id="terminal-input" placeholder="Type command..." autocomplete="off" spellcheck="false" />
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Cyber Engine Script -->
+  <script src="cyber3d.js"></script>
+</body>
+</html>
